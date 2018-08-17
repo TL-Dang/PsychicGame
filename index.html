@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link rel="stylesheet" type="text/css">
 </head>
 <body>
     <h1>Psychic Game</h1>
@@ -15,9 +14,9 @@
     <h5>Losses: <span id="losses"></span></h5>
     <h6>Already Guessed Letters : <span id="guesses"></span></h6>
 
-    <script type="text/javascript">
+    <script>
     const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    let wins = 0
+    let win = 0
     let losses = 0
     let guessesLeft = 10
     let guessedLetters = []
@@ -44,9 +43,9 @@
     function win() {
         wins++
         gameState = false
-        document.querySelector('#message').innerHTML = 'You Win!
+        document.querySelector('#message').innerHTML = 'You Win! Hip Hip Hooray!
         The letter was : ${compChoice}!
-        Press ENTER key to continue'
+        Press ENTER key to continue ...'
         document.querySelector('#wins').innerHTML = '' + wins
     }
 
@@ -77,7 +76,7 @@
     }
 
     document.onkeyup = function (event) {
-        const letter = event.keyif (letter != 'Enter') {
+        const letter = event.key if (letter != 'Enter') {
             if (alphaCheck(letter)) {
                 guessedLetters.push(letter)
                 document.querySelector('#guesses').innerHTML = guessedLetters.toString()
